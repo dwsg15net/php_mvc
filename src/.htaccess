@@ -1,0 +1,8 @@
+<files .htaccess>
+    Require all denied
+</files>
+Options +FollowSymlinks -Indexes -Multiviews
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)/(.*)/?$ index.php?controller=$1&action=$2 [L,QSA]
